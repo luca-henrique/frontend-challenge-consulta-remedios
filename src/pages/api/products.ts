@@ -1,16 +1,16 @@
 import type {NextApiRequest, NextApiResponse} from 'next';
+import {runMiddleware, cors} from './cors';
 
-type Data = {
-  id: number;
-  name: string;
-}[];
+import Products from '../../mock/products.json';
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data | undefined>,
+  res: NextApiResponse,
 ) {
+  await runMiddleware(req, res, cors);
+
   if (req.method === 'GET') {
-    res.status(200).json([]);
+    res.status(200).json(Products);
   } else {
     res.status(400).json(undefined);
   }
