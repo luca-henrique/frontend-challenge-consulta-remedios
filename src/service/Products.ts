@@ -7,8 +7,8 @@ export class ProductService {
     this.urlPath = 'http://localhost:3000/api';
   }
 
-  get() {
-    let url = `${this.urlPath}/products`;
-    return axios.get(url).then((response) => response.data);
+  async get() {
+    const {data} = await axios.get(`${this.urlPath}/products`);
+    return data;
   }
 }

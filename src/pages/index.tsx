@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Switch from '@mui/material/Switch';
+import {ProductList} from '../components/organisms/ProductList/ProductList';
 
 const label = {inputProps: {'aria-label': 'Switch demo'}};
 
@@ -13,7 +13,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Switch {...label} defaultChecked />
+      <ProductList />
     </div>
   );
 }
