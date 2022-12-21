@@ -1,25 +1,40 @@
-import {useEffect, useState} from 'react';
-import {ProductService} from '../../../service/Products';
+import axios from 'axios';
+import {GetServerSideProps, NextPage} from 'next';
 
-const shoppingListService = new ProductService();
+type User = {
+  name: string;
+};
 
-export const ProductList = () => {
-  const [productsList, setProductList] = useState([]);
+type UserPageProps = {
+  users: User[];
+};
 
-  const getProducts = async () => {
-    const productService = await shoppingListService.get();
-    setProductList(productService);
-  };
+const url =
+  'https://my-json-server.typicode.com/codeedu/live-imersao-fullcycle7-nextjs/users';
 
-  useEffect(() => {
-    getProducts();
-  }, []);
+const UsersPage: NextPage<UserPageProps> = (props) => {
+  const {users} = props;
 
   return (
     <div>
-      {productsList.map((item) => {
-        return <li key={item.id}>{item.name}</li>;
-      })}
+      <h1>UsersPage</h1>
+      <ul>
+        {[].map((user: any, key) => (
+          <li key={key}>{user.name}</li>
+        ))}
+      </ul>
     </div>
   );
+};
+
+export default UsersPage;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const {data} = await axios.get(url);
+
+  return {
+    props: {
+      users: data,
+    },
+  };
 };
