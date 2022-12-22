@@ -6,6 +6,8 @@
 
 - https://blog.logrocket.com/getting-started-with-mui-and-next-js/
 
+https://mui.com/material-ui/react-grid2/#custom-breakpoints
+
 # NextJS
 
 - lazyload (https://beta.nextjs.org/docs/routing/loading-ui)

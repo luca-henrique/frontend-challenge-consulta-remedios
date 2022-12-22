@@ -1,0 +1,14 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  box-shadow: none;
+}
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+}
