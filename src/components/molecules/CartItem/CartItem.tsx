@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import CallOfDuty from '../../../assets/images/call-of-duty-infinite-warfare.png';
 import Image from 'next/image';
 
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+
 export const TitleItemCart = styled.h6`
   color: #7f7575;
   font-size: 14px;
@@ -51,16 +54,7 @@ export const CartItem = () => {
           <TitleItemCart>Call Of Duty: Infinite Warfare</TitleItemCart>
           <PriceItemCart>R$ 49,99</PriceItemCart>
         </CartContainerDescription>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyItems: 'center',
-          }}
-        >
-          x
-        </div>
+        <IconButton>x</IconButton>
       </CartContainer>
     </div>
   );

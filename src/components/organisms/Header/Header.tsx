@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {SortProductsOptions} from '../../molecules/SortProductsOptions/SortProductsOptions';
+import {SortProductsOptions} from '../../molecules/SelectSortProductsOptions/SortProductsOptions';
 
 const Title = styled.h1`
   color: #363636;

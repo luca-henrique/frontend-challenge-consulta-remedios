@@ -1,4 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
+import {CartInformations} from '../CartInformations/CartInformations';
 
 export const Container = styled.div`
   display: flex;
@@ -13,5 +15,11 @@ export const CartItens = () => {
 
   const cartList = cart.map((item) => <CartItem key={item} />);
 
-  return <Container>{cartList}</Container>;
+  return (
+    <Container>
+      {cartList}
+
+      <CartInformations />
+    </Container>
+  );
 };

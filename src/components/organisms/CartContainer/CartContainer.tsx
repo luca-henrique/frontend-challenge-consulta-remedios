@@ -10,7 +10,6 @@ const CartContainer = styled.aside`
   border: 1px solid #e1e1e1;
   padding: 20px 25px;
 
-  height: 325px;
   width: 262px;
 `;
 
