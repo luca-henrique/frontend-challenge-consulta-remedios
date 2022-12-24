@@ -9,12 +9,15 @@ import {Header} from '../components/organisms/Header/Header';
 import {AsideCart} from '../components/organisms/CartContainer/CartContainer';
 
 import styled from 'styled-components';
+import {useReducerHook} from '../hook/useReducerHook';
 
 export const Container = styled.div`
   padding: 42px 72px;
 `;
 
 const Home = ({products}: any) => {
+  const {state} = useReducerHook();
+
   return (
     <Container>
       <div style={{display: 'flex', flexDirection: 'row'}}>

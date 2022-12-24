@@ -1,11 +1,11 @@
-import {createContext, useState} from 'react';
+import React from 'react';
+import {initialState} from './state';
+import {ProductCartActions} from './actions';
 
-import {initialState, Props} from './state';
-
-export const ContextApp = createContext<Props>(initialState);
-
-export const AppProvider = ({children}: any) => {
-  const [cart, setCart] = useState<any>(initialState.cart);
-
-  return <ContextApp.Provider value={{cart}}>{children}</ContextApp.Provider>;
-};
+export const CartContext = React.createContext<{
+  state: any;
+  dispatch: React.Dispatch<ProductCartActions>;
+}>({
+  state: initialState,
+  dispatch: () => undefined,
+});
