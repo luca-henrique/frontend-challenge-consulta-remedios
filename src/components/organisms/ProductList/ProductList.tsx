@@ -4,7 +4,7 @@ import {CardProductItem} from '../../molecules/ProductItem/ProductItem';
 
 export const ProductList = ({products}: any) => {
   return (
-    <Grid container>
+    <Grid container style={{marginTop: '55px'}}>
       {products.map((product) => {
         return <CardProductItem key={product.id} product={product} />;
       })}
