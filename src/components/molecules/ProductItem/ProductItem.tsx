@@ -1,18 +1,22 @@
-import Grid from '@mui/material/Grid';
 import Image from 'next/image';
 import React, {useState} from 'react';
-import {Price, Title} from './style';
+import {
+  Button,
+  ContainerDescriptionProduct,
+  ContainerImageProduct,
+  Price,
+  Title,
+} from './style';
 
 import CallOfDuty from '../../../assets/images/call-of-duty-infinite-warfare.png';
 
-export const CardProductItem = ({name, price}: any) => {
+import {useReducerHook} from '../../../hook/useReducerHook';
+import {addProductCart} from '../../../store/reducers';
+
+export const CardProductItem = ({product}: any) => {
+  const {dispatch} = useReducerHook();
+
   const [changerOnMouse, setChangerOnMouse] = useState(false);
-
-  const [cart, setCart] = useState([]);
-
-  const addProductCart = (product: any) => {
-    setCart([...cart, product]);
-  };
 
   const eventOnMouseEnter = () => {
     setChangerOnMouse(true);
@@ -23,39 +27,25 @@ export const CardProductItem = ({name, price}: any) => {
   };
 
   return (
-    <Grid xs={12} sm={6} md={4} lg={4} style={{marginBottom: '41px'}}>
-      <button onMouseEnter={eventOnMouseEnter} onMouseLeave={eventOnMouseLeave}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '21px 41px',
-          }}
-        >
-          <Image src={CallOfDuty} alt='aq' style={{background: 'white'}} />
-        </div>
+    <button onMouseEnter={eventOnMouseEnter} onMouseLeave={eventOnMouseLeave}>
+      <ContainerImageProduct>
+        <Image
+          src={CallOfDuty}
+          alt={product.name}
+          style={{background: 'white'}}
+        />
+      </ContainerImageProduct>
 
-        {changerOnMouse ? (
-          <button onClick={() => addProductCart({name})}>
-            Adicionar no carrinho
-          </button>
-        ) : (
-          <div
-            style={{
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Title>{name}</Title>
-            <Price>{price}</Price>
-          </div>
-        )}
-      </button>
-    </Grid>
+      {changerOnMouse ? (
+        <Button onClick={() => dispatch(addProductCart(product))}>
+          Adicionar no carrinho
+        </Button>
+      ) : (
+        <ContainerDescriptionProduct>
+          <Title>{product.name}</Title>
+          <Price>{product.price}</Price>
+        </ContainerDescriptionProduct>
+      )}
+    </button>
   );
 };

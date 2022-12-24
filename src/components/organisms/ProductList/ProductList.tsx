@@ -6,7 +6,7 @@ export const ProductList = ({products}: any) => {
   return (
     <Grid container>
       {products.map((product) => {
-        return <CardProductItem key={product.id} {...product} />;
+        return <CardProductItem key={product.id} product={product} />;
       })}
     </Grid>
   );
