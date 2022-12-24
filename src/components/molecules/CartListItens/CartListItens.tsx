@@ -1,14 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import {CartInformations} from '../CartInformations/CartInformations';
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 22px;
-`;
+import {Container} from './style';
 
 import {CartItem} from '../CartItem/CartItem';
+import {CartInformations} from '../CartInformations/CartInformations';
 
 export const CartItens = () => {
   const cart = [1, 2, 3];

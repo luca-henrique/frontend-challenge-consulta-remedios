@@ -4,7 +4,6 @@ import CallOfDuty from '../../../assets/images/call-of-duty-infinite-warfare.png
 import Image from 'next/image';
 
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
 
 export const TitleItemCart = styled.h6`
   color: #7f7575;
@@ -54,7 +53,7 @@ export const CartItem = () => {
           <TitleItemCart>Call Of Duty: Infinite Warfare</TitleItemCart>
           <PriceItemCart>R$ 49,99</PriceItemCart>
         </CartContainerDescription>
-        <IconButton>x</IconButton>
+        <IconButton style={{width: '30px', height: '30px'}}>x</IconButton>
       </CartContainer>
     </div>
   );

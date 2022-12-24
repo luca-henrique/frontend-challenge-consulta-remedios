@@ -19,8 +19,9 @@ const Home = ({products}: any) => {
     <Container>
       <div style={{display: 'flex', flexDirection: 'row'}}>
         <Header />
-        <AsideCart />
       </div>
+
+      <ProductList products={products} />
     </Container>
   );
 };
