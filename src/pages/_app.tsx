@@ -13,8 +13,6 @@ import {CartContext} from '../store/context';
 export default function App({Component, pageProps}: AppProps) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  console.log(state);
-
   return (
     <>
       <Head>

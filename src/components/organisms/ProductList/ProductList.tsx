@@ -1,13 +1,39 @@
-import Grid from '@mui/material/Grid';
 import React from 'react';
 import {CardProductItem} from '../../molecules/ProductItem/ProductItem';
 
+import styled from 'styled-components';
+
+export const Container = styled.div`
+  display: grid;
+
+  justify-content: space-space-between;
+
+  grid-template-areas:
+    '1 2 3'
+    '1 2 3'
+    '1 2 3';
+
+  @media (max-width: 820px) {
+    grid-template-areas:
+      '1 2'
+      '1 2'
+      '1 2';
+  }
+
+  @media (max-width: 420px) {
+    grid-template-areas:
+      '1'
+      '1'
+      '1';
+  }
+`;
+
 export const ProductList = ({products}: any) => {
   return (
-    <Grid container style={{marginTop: '55px'}}>
-      {products.map((product) => {
-        return <CardProductItem key={product.id} product={product} />;
-      })}
-    </Grid>
+    <Container>
+      {products.map((product) => (
+        <CardProductItem key={product.id} product={product} />
+      ))}
+    </Container>
   );
 };

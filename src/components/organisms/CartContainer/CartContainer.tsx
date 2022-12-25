@@ -10,7 +10,7 @@ const CartContainer = styled.aside`
   border: 1px solid #e1e1e1;
   padding: 20px 25px;
 
-  width: 262px;
+  width: 20%;
 `;
 
 const Title = styled.h2`

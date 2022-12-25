@@ -18,7 +18,11 @@ export const CardProductItem = ({product}: any) => {
   };
 
   return (
-    <button onMouseEnter={eventOnMouseEnter} onMouseLeave={eventOnMouseLeave}>
+    <button
+      onMouseEnter={eventOnMouseEnter}
+      onMouseLeave={eventOnMouseLeave}
+      style={{marginBottom: '22px'}}
+    >
       <ContainerImageProduct>
         <Image src={CallOfDuty} alt={product.name} />
       </ContainerImageProduct>

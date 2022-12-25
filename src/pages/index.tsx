@@ -13,18 +13,28 @@ import {useReducerHook} from '../hook/useReducerHook';
 
 export const Container = styled.div`
   padding: 42px 72px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `;
 
 const Home = ({products}: any) => {
-  const {state} = useReducerHook();
-
   return (
     <Container>
       <div style={{display: 'flex', flexDirection: 'row'}}>
-        <Header />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '90%',
+            marginRight: '40px',
+          }}
+        >
+          <Header />
+          <ProductList products={products} />
+        </div>
+        <AsideCart />
       </div>
-
-      <ProductList products={products} />
     </Container>
   );
 };

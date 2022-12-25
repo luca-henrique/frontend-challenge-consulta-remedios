@@ -10,4 +10,6 @@ export const ContainerHeader = styled.header`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+
+  margin-bottom: 55px;
 `;
