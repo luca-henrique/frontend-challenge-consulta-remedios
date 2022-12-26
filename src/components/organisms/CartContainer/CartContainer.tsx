@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import {EmptyCart} from '../../molecules/EmptyCart/EmptyCart';
 import {CartItens} from '../../molecules/CartListItens/CartListItens';
+import {useReducerHook} from '../../../hook/useReducerHook';
 
 const CartContainer = styled.aside`
   display: flex;
@@ -25,7 +26,9 @@ const CartCountItem = styled.h4`
 `;
 
 export const AsideCart = () => {
-  const cart = [1, 2, 3];
+  const {
+    state: {cart},
+  } = useReducerHook();
 
   const EXIST_ITEMS = cart.length > 0;
 

@@ -4,8 +4,13 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
 
+//O usuário poderá ordenar os produtos por preço, popularidade (score) e ordem alfabética
+
 const DATA_SELECT_OPTIONS_SORT = [
   {value: 'Mais populares', name: 'Mais populares'},
+  {value: 'Maior Preço', name: 'Maior Preço'},
+  {value: 'Menor Preço', name: 'Menor Preço'},
+  {value: 'Ordem alfabética', name: 'Ordem alfabética'},
 ];
 
 export const SelectSortProductsOptions = () => {
