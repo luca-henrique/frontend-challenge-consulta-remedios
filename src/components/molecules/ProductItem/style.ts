@@ -6,4 +6,8 @@ export const ContainerImageProduct = styled.div`
   justify-content: center;
   align-items: center;
   padding: 21px 41px;
+
+  border-radius: 4px;
+
+  background-color: #eeeeee;
 `;

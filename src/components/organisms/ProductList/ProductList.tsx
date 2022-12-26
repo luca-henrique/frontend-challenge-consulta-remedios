@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
 
-  justify-content: space-space-between;
+  gap: 40px 30px;
 
   grid-template-areas:
     '1 2 3'

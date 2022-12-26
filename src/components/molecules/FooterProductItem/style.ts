@@ -24,4 +24,5 @@ export const Button = styled.button`
   color: #3487dc;
   border: none;
   font-size: 16px;
+  background-color: white;
 `;

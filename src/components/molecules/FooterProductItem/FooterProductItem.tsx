@@ -8,7 +8,7 @@ import {Button, ContainerDescriptionProduct, Title, Price} from './style';
 export const FooterProductItem = ({changerOnMouse, product}: any) => {
   const {dispatch} = useReducerHook();
   return (
-    <div style={{height: '48px'}}>
+    <div style={{height: '48px', marginTop: '21px'}}>
       {changerOnMouse ? (
         <Button onClick={() => dispatch(addProductCart(product))}>
           Adicionar no carrinho

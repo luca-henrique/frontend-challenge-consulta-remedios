@@ -21,7 +21,7 @@ export const CardProductItem = ({product}: any) => {
     <button
       onMouseEnter={eventOnMouseEnter}
       onMouseLeave={eventOnMouseLeave}
-      style={{marginBottom: '22px'}}
+      style={{marginBottom: '22px', border: 'none', background: 'white'}}
     >
       <ContainerImageProduct>
         <Image src={CallOfDuty} alt={product.name} />
