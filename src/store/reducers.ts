@@ -1,6 +1,11 @@
 import {initialState} from './state';
 
-import {AddProductCart, ProductCartActions, ActionType} from './actions';
+import {
+  AddProductCart,
+  ProductCartActions,
+  ActionType,
+  RemoveProductCart,
+} from './actions';
 
 import {MAX_PRICE_SHIPPING} from '../util/calculateShipping';
 
@@ -26,6 +31,27 @@ export function cartReducer(
             : subTotal,
       };
 
+    case ActionType.REMOVE_PRODUCT_CART:
+      let newSubTotal = state.subtotal - action.payload.price;
+
+      const removeItemCart = [
+        ...state.cart.filter((elem, idx) => {
+          return elem.id !== action.payload.id;
+        }),
+      ];
+
+      return {
+        ...state,
+        cart: removeItemCart,
+        subtotal: newSubTotal,
+        shipping:
+          newSubTotal < MAX_PRICE_SHIPPING ? removeItemCart.length * 10 : 0,
+        total:
+          newSubTotal < MAX_PRICE_SHIPPING
+            ? newSubTotal + removeItemCart.length * 10
+            : newSubTotal,
+      };
+
     default:
       return state;
   }
@@ -33,5 +59,10 @@ export function cartReducer(
 
 export const addProductCart = (product: any): AddProductCart => ({
   type: ActionType.ADD_PRODUCT_CART,
+  payload: product,
+});
+
+export const removeProductCart = (product: any): RemoveProductCart => ({
+  type: ActionType.REMOVE_PRODUCT_CART,
   payload: product,
 });
