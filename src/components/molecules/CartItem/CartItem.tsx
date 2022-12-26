@@ -5,6 +5,8 @@ import Image from 'next/image';
 
 import IconButton from '@mui/material/IconButton';
 import {formatPrice} from '../../../util/formatPrice';
+import {useReducerHook} from '../../../hook/useReducerHook';
+import {removeProductCart} from '../../../store/reducers';
 
 export const TitleItemCart = styled.h6`
   color: #7f7575;
@@ -44,6 +46,8 @@ export const ContainerImage = styled.div`
 `;
 
 export const CartItem = ({cart}) => {
+  const {dispatch} = useReducerHook();
+
   return (
     <div style={{marginBottom: '18px'}}>
       <CartContainer>
@@ -54,7 +58,12 @@ export const CartItem = ({cart}) => {
           <TitleItemCart>{cart.name}</TitleItemCart>
           <PriceItemCart>{formatPrice(cart.price)}</PriceItemCart>
         </CartContainerDescription>
-        <IconButton style={{width: '30px', height: '30px'}}>x</IconButton>
+        <IconButton
+          style={{width: '30px', height: '30px'}}
+          onClick={() => dispatch(removeProductCart(cart))}
+        >
+          x
+        </IconButton>
       </CartContainer>
     </div>
   );

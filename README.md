@@ -28,16 +28,31 @@ https://www.youtube.com/watch?v=k8l7vu-m85Q
 
 # Requisitos
 
+## Feito
+
+- Utlizar técnicas avançadas como ESLint, Prettier, Axios, lazyload nas imagens e skeleton loading
+- Utilizar Typescript
+- Estilizar com a ajude do MUI (https://mui.com/material-ui/getting-started/overview/)
+- Utilizar algum design pattern para estruturar seu projeto (Ex. Atomic Design)
+- Utlizar o NextJS
 - Consumir e renderizar os produtos dinamicamente através do mock json como se fosse um endpoint através do Fetch API ou Axios
 - Os valores exibidos no checkout (frete, subtotal e total) devem ser calculados dinamicamente
-- O usuário poderá adicionar e remover produtos do carrinho
-
 - O botão de adicionar ao carrinho será exibido no over de seu respectivo produto
 - O botão de remover o item do carrinho será exibido no over de seu respectivo item no carrinho
-
-- O usuário poderá ordenar os produtos por preço, popularidade (score) e ordem alfabética
 - A cada produto adicionado, deve-se somar R$ 10,00 ao frete
 - O frete é grátis para compras acima de R$ 250,00
 - A aplicação deve ser feita obrigatoriamente em REACT
 - A aplicação deve estar hospedada em um domínio público
+- O usuário poderá adicionar e remover produtos do carrinho
+
+## Falta
+
+- O usuário poderá ordenar os produtos por preço, popularidade (score) e ordem alfabética
+- utilizar lazyload nas imagens
+- utilizar skeleton loading nas imagens
+- Ganha muitos pontos: Desenvolver a aplicação com SSG
+
+- Utilizar variáveis de ambiente (.env)
+- Utlizar o Cypress para testes E2E
+- Deixar a aplicação responsiva e mobile first
 - o readme de seu projeto não pode ser genérico (como muitos frameworks trazem por padrão) e deve obrigatoriamente conter os requisitos e passo a passo de como rodar sua aplicação localmente. Além disso deve conter as tecnologias, libs, patterns etc, ou seja, tudo o que foi implementado.

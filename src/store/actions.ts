@@ -1,6 +1,9 @@
 export enum ActionType {
   ADD_PRODUCT_CART,
   REMOVE_PRODUCT_CART,
+  SORT_PRODUCT_BY_PRICE,
+  SORT_PRODUCT_BY_NAME,
+  SORT_PRODUCT_BY_SCORE,
 }
 
 export interface AddProductCart {
@@ -13,4 +16,21 @@ export interface RemoveProductCart {
   payload: any;
 }
 
-export type ProductCartActions = AddProductCart | RemoveProductCart;
+export interface SortProductsByName {
+  type: ActionType.SORT_PRODUCT_BY_NAME;
+}
+
+export interface SortProductsByPrice {
+  type: ActionType.SORT_PRODUCT_BY_PRICE;
+}
+
+export interface SortProductsByScore {
+  type: ActionType.SORT_PRODUCT_BY_PRICE;
+}
+
+export type ProductCartActions =
+  | AddProductCart
+  | RemoveProductCart
+  | SortProductsByName
+  | SortProductsByPrice
+  | SortProductsByScore;

@@ -9,7 +9,22 @@ import {
 
 import {MAX_PRICE_SHIPPING} from '../util/calculateShipping';
 
-//Os valores exibidos no checkout (frete, subtotal e total) devem ser calculados dinamicamente
+/*
+const orderByPrice = [].sort(
+  (a, b) => parseFloat(a.price) - parseFloat(b.price),
+);
+
+const orderByPrice = [].sort(
+  (a, b) => parseFloat(a.score) - parseFloat(b.score),
+);
+
+users.sort(function(a, b){
+    if(a.firstname < b.firstname) { return -1; }
+    if(a.firstname > b.firstname) { return 1; }
+    return 0;
+})
+
+*/
 
 export function cartReducer(
   state = initialState,
@@ -35,7 +50,7 @@ export function cartReducer(
       let newSubTotal = state.subtotal - action.payload.price;
 
       const removeItemCart = [
-        ...state.cart.filter((elem, idx) => {
+        ...state.cart.filter((elem) => {
           return elem.id !== action.payload.id;
         }),
       ];
