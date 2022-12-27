@@ -1,40 +1,39 @@
 import {GetServerSideProps} from 'next';
+import dynamic from 'next/dynamic';
+
+import {useReducerHook} from '../hook/useReducerHook';
+import {useEffect} from 'react';
+import {readProducts} from '../store/reducers';
 
 import {ProductService} from '../service/Products';
 const shoppingListService = new ProductService();
 
-import {ProductList} from '../components/organisms/ProductList/ProductList';
+const Header = dynamic(() => import('../components/organisms/Header/Header'));
+const ProductList = dynamic(
+  () => import('../components/organisms/ProductList/ProductList'),
+);
+const AsideCart = dynamic(
+  () => import('../components/organisms/CartContainer/CartContainer'),
+);
 
-import {Header} from '../components/organisms/Header/Header';
-import {AsideCart} from '../components/organisms/CartContainer/CartContainer';
-
-import styled from 'styled-components';
-import {useReducerHook} from '../hook/useReducerHook';
-
-export const Container = styled.div`
-  padding: 42px 72px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
+import {Container, ContentContainer, Row} from './style';
 
 const Home = ({products}: any) => {
+  const {dispatch} = useReducerHook();
+
+  useEffect(() => {
+    dispatch(readProducts(products));
+  }, []);
+
   return (
     <Container>
-      <div style={{display: 'flex', flexDirection: 'row'}}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '90%',
-            marginRight: '40px',
-          }}
-        >
+      <Row>
+        <ContentContainer>
           <Header />
-          <ProductList products={products} />
-        </div>
+          <ProductList />
+        </ContentContainer>
         <AsideCart />
-      </div>
+      </Row>
     </Container>
   );
 };

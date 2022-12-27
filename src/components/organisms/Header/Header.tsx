@@ -3,7 +3,7 @@ import {SelectSortProductsOptions} from '../../molecules/SelectSortProductsOptio
 
 import {ContainerHeader, Title} from './style';
 
-export const Header = () => {
+const Header = () => {
   return (
     <ContainerHeader>
       <Title>Games</Title>
@@ -11,3 +11,5 @@ export const Header = () => {
     </ContainerHeader>
   );
 };
+
+export default Header;

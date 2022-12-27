@@ -1,31 +1,10 @@
-import styled from 'styled-components';
-
 import {EmptyCart} from '../../molecules/EmptyCart/EmptyCart';
 import {CartItens} from '../../molecules/CartListItens/CartListItens';
 import {useReducerHook} from '../../../hook/useReducerHook';
 
-const CartContainer = styled.aside`
-  display: flex;
-  flex-direction: column;
+import {CartContainer, Title, CartCountItem, Row} from './style';
 
-  border: 1px solid #e1e1e1;
-  padding: 20px 25px;
-
-  width: 20%;
-`;
-
-const Title = styled.h2`
-  color: #363636;
-  font-size: 18px;
-`;
-
-const CartCountItem = styled.h4`
-  color: #7f7575;
-  font-size: 14px;
-  margin-left: 4px;
-`;
-
-export const AsideCart = () => {
+const AsideCart = () => {
   const {
     state: {cart},
   } = useReducerHook();
@@ -34,13 +13,13 @@ export const AsideCart = () => {
 
   return (
     <CartContainer>
-      <div
-        style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}
-      >
+      <Row>
         <Title>Carrinho</Title>
         {EXIST_ITEMS && <CartCountItem>({cart.length} itens)</CartCountItem>}
-      </div>
+      </Row>
       {EXIST_ITEMS ? <CartItens /> : <EmptyCart />}
     </CartContainer>
   );
 };
+
+export default AsideCart;

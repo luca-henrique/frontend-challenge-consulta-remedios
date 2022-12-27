@@ -1,39 +1,20 @@
-import React from 'react';
+import {useReducerHook} from '../../../hook/useReducerHook';
+import {IProduct} from '../../../types';
 import {CardProductItem} from '../../molecules/ProductItem/ProductItem';
+import {Container} from './style';
 
-import styled from 'styled-components';
+const ProductList = () => {
+  const {
+    state: {products},
+  } = useReducerHook();
 
-export const Container = styled.div`
-  display: grid;
-
-  gap: 40px 30px;
-
-  grid-template-areas:
-    '1 2 3'
-    '1 2 3'
-    '1 2 3';
-
-  @media (max-width: 820px) {
-    grid-template-areas:
-      '1 2'
-      '1 2'
-      '1 2';
-  }
-
-  @media (max-width: 420px) {
-    grid-template-areas:
-      '1'
-      '1'
-      '1';
-  }
-`;
-
-export const ProductList = ({products}: any) => {
   return (
     <Container>
-      {products.map((product) => (
+      {products.map((product: IProduct) => (
         <CardProductItem key={product.id} product={product} />
       ))}
     </Container>
   );
 };
+
+export default ProductList;

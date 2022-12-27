@@ -14,7 +14,9 @@ export const CartItens = () => {
 
   return (
     <Container>
-      {cartList}
+      <div style={{height: '210px', overflowY: 'scroll', marginBottom: '10px'}}>
+        {cartList}
+      </div>
 
       <CartInformations />
     </Container>

@@ -44,15 +44,10 @@ https://www.youtube.com/watch?v=k8l7vu-m85Q
 - A aplicação deve ser feita obrigatoriamente em REACT
 - A aplicação deve estar hospedada em um domínio público
 - O usuário poderá adicionar e remover produtos do carrinho
+- Ganha muitos pontos: Desenvolver a aplicação com SSG
 
 ## Falta
 
 - O usuário poderá ordenar os produtos por preço, popularidade (score) e ordem alfabética
-- utilizar lazyload nas imagens
-- utilizar skeleton loading nas imagens
-- Ganha muitos pontos: Desenvolver a aplicação com SSG
 
-- Utilizar variáveis de ambiente (.env)
-- Utlizar o Cypress para testes E2E
-- Deixar a aplicação responsiva e mobile first
 - o readme de seu projeto não pode ser genérico (como muitos frameworks trazem por padrão) e deve obrigatoriamente conter os requisitos e passo a passo de como rodar sua aplicação localmente. Além disso deve conter as tecnologias, libs, patterns etc, ou seja, tudo o que foi implementado.

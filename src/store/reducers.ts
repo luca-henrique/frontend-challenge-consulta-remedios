@@ -5,26 +5,10 @@ import {
   ProductCartActions,
   ActionType,
   RemoveProductCart,
+  ReadProducts,
 } from './actions';
 
 import {MAX_PRICE_SHIPPING} from '../util/calculateShipping';
-
-/*
-const orderByPrice = [].sort(
-  (a, b) => parseFloat(a.price) - parseFloat(b.price),
-);
-
-const orderByPrice = [].sort(
-  (a, b) => parseFloat(a.score) - parseFloat(b.score),
-);
-
-users.sort(function(a, b){
-    if(a.firstname < b.firstname) { return -1; }
-    if(a.firstname > b.firstname) { return 1; }
-    return 0;
-})
-
-*/
 
 export function cartReducer(
   state = initialState,
@@ -67,6 +51,12 @@ export function cartReducer(
             : newSubTotal,
       };
 
+    case ActionType.READ_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload,
+      };
+
     default:
       return state;
   }
@@ -79,5 +69,10 @@ export const addProductCart = (product: any): AddProductCart => ({
 
 export const removeProductCart = (product: any): RemoveProductCart => ({
   type: ActionType.REMOVE_PRODUCT_CART,
+  payload: product,
+});
+
+export const readProducts = (product: any): ReadProducts => ({
+  type: ActionType.READ_PRODUCTS,
   payload: product,
 });

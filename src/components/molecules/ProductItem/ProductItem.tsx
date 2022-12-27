@@ -6,6 +6,7 @@ import CallOfDuty from '../../../assets/images/call-of-duty-infinite-warfare.png
 
 import {FooterProductItem} from '../FooterProductItem/FooterProductItem';
 import {useReducerHook} from '../../../hook/useReducerHook';
+import {IProduct} from '../../../types';
 
 export const CardProductItem = ({product}: any) => {
   const [changerOnMouse, setChangerOnMouse] = useState(false);
@@ -16,7 +17,7 @@ export const CardProductItem = ({product}: any) => {
   } = useReducerHook();
 
   const eventOnMouseEnter = () => {
-    let existProduct = cart.find(function (item) {
+    let existProduct = cart.find(function (item: IProduct) {
       return item.id === product.id;
     });
     setProcuctExistCart(!!existProduct);

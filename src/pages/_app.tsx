@@ -10,11 +10,15 @@ import {cartReducer} from '../store/reducers';
 
 import {CartContext} from '../store/context';
 
+import {Open_Sans} from '@next/font/google';
+
+const openSans = Open_Sans({subsets: ['latin']});
+
 export default function App({Component, pageProps}: AppProps) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   return (
-    <>
+    <div className={openSans.className}>
       <Head>
         <title>Teste Técnico Frontend</title>
         <meta
@@ -25,6 +29,6 @@ export default function App({Component, pageProps}: AppProps) {
       <CartContext.Provider value={{state, dispatch}}>
         <Component {...pageProps} />
       </CartContext.Provider>
-    </>
+    </div>
   );
 }
