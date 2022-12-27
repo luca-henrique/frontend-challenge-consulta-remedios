@@ -9,6 +9,7 @@ import {
 } from './actions';
 
 import {MAX_PRICE_SHIPPING} from '../util/calculateShipping';
+import {IProduct} from '../types';
 
 export function cartReducer(
   state = initialState,
@@ -34,7 +35,7 @@ export function cartReducer(
       let newSubTotal = state.subtotal - action.payload.price;
 
       const removeItemCart = [
-        ...state.cart.filter((elem) => {
+        ...state.cart.filter((elem: IProduct) => {
           return elem.id !== action.payload.id;
         }),
       ];
