@@ -4,7 +4,8 @@ export class ProductService {
   private urlPath: string;
 
   constructor() {
-    this.urlPath = 'http://localhost:3000/api';
+    this.urlPath =
+      'https://frontend-challenge-consulta-remedios.vercel.app/api';
   }
 
   async get() {
