@@ -1,4 +1,4 @@
-import {IProduct, IProducts} from '../types';
+import {IProduct} from '../types';
 
 export const orderByLowestPrice = (products: IProduct[]) =>
   products.sort((a, b) => a.price - b.price);
