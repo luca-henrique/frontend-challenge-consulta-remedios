@@ -18,7 +18,7 @@ const AsideCart = dynamic(
 
 import {Container, ContentContainer, Row} from './style';
 
-const Home = ({products}: any) => {
+export default function Home({products}: any) {
   const {dispatch} = useReducerHook();
 
   useEffect(() => {
@@ -36,9 +36,7 @@ const Home = ({products}: any) => {
       </Row>
     </Container>
   );
-};
-
-export default Home;
+}
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const data = await shoppingListService.get();
