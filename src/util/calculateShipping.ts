@@ -15,7 +15,7 @@ export const calculateShipping = (subtotal: number, lengthCart: number) => {
   return calculationOptions ? priceTotalShipping : 0;
 };
 
-export const calculateTotal = (subTotal, lengthCart) => {
+export const calculateTotal = (subTotal: number, lengthCart: number) => {
   const calculationOptions = subTotal < MAX_PRICE_SHIPPING;
 
   const priceTotalShipping = lengthCart * SHIPPING_PRICE_EACH_PRODUCT;
