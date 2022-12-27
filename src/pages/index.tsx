@@ -16,7 +16,7 @@ const AsideCart = dynamic(
   () => import('../components/organisms/CartContainer/CartContainer'),
 );
 
-import {Container, ContentContainer, Row} from './style';
+import {Container, ContentContainer, Row} from '../styles/style';
 
 export default function Home({products}: any) {
   const {dispatch} = useReducerHook();
