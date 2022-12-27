@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import CallOfDuty from '../../../assets/images/call-of-duty-infinite-warfare.png';
 import Image from 'next/image';
 
@@ -8,48 +6,22 @@ import {formatPrice} from '../../../util/formatPrice';
 import {useReducerHook} from '../../../hook/useReducerHook';
 import {removeProductCart} from '../../../store/reducers';
 
-export const TitleItemCart = styled.h6`
-  color: #7f7575;
-  font-size: 14px;
-  margin-bottom: 2px;
-`;
+import {
+  CartContainer,
+  ContainerImage,
+  CartContainerDescription,
+  TitleItemCart,
+  PriceItemCart,
+  Container,
+} from './style';
+import {IProduct} from '../../../types';
 
-export const PriceItemCart = styled.h6`
-  color: #423b3b;
-  font-size: 14px;
-  margin-bottom: 2px;
-`;
-
-export const CartContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const CartContainerDescription = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-`;
-
-export const ContainerImage = styled.div`
-  width: 60px;
-  height: 53px;
-  padding: 6px 10px;
-  background: #eeeeee;
-
-  border-radius: 4px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const CartItem = ({cart}) => {
+//@ts-ignore
+export const CartItem = ({cart}: IProduct) => {
   const {dispatch} = useReducerHook();
 
   return (
-    <div style={{marginBottom: '18px'}}>
+    <Container>
       <CartContainer>
         <ContainerImage>
           <Image src={CallOfDuty} alt='aq' width={41} height={42} />
@@ -65,6 +37,6 @@ export const CartItem = ({cart}) => {
           x
         </IconButton>
       </CartContainer>
-    </div>
+    </Container>
   );
 };

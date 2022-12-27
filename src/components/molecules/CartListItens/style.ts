@@ -5,3 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   margin-top: 22px;
 `;
+
+export const ContainerCartList = styled.div`
+  height: 210px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+`;
